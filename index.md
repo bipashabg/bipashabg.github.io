@@ -1,5 +1,1 @@
-Here you can say lots of fun things about your site.
-
-Maybe say a some things about yourself.
-
-Or maybe what you plan to blog about.
+Hello friends, currently I shall be posting my blogs related to my experience as a student developer for Google Summer of Code 2025, but be sure to expect more to come. Have a nice day and doubt yourself lesser by each passing day :)
