@@ -1,0 +1,22 @@
+.about-me-container {
+    padding: 5% 10%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+@media screen {
+    @media (max-width: 768px) {
+        .about-me-container {
+            display: block;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+    }
+
+    @media (max-width: 567px) {
+        .about-me-container {
+            font-size: 12px;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+.contact_wrapper svg {
+  font-size: 1em;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.contact-form {
+  padding-top: 20px;
+
+  button {
+    float: right;
+    background-color: white;
+    color: #050f0b;
+  }
+
+  button:hover {
+    background-color: #5000ca;
+    color: white;
+  }
+
+  // Input text
+  .MuiOutlinedInput-input {
+    color: white;
+  }
+
+  .MuiOutlinedInput-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+  }
+
+  // Field labels ("Your Name", "Email / Phone", "Message")
+  .MuiInputLabel-root {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .MuiInputLabel-root.Mui-focused {
+    color: #5000ca;
+  }
+
+  // Outline border
+  .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #5000ca;
+  }
+}
+
+// Light-mode overrides
+.light-mode .contact-form {
+  .MuiOutlinedInput-input {
+    color: #0d1116;
+  }
+
+  .MuiOutlinedInput-input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .MuiInputLabel-root {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(0, 0, 0, 0.3);
+  }
+
+  button {
+    background-color: #0d1116;
+    color: white;
+  }
+}
+
+label {
+  font-size: 1.2rem;
+  font-family: 'DomaineDispNar-Medium', sans-serif;
+}
+
+.form-flex {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 15px;
+}
+
+.form-flex .MuiFormControl-root {
+  width: 100%;
+}
+
+form {
+  width: 100% !important;
+}
+
+.body-form {
+  width: 100% !important;
+  margin-bottom: 15px !important;
+}
