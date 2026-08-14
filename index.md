@@ -1,1 +1,1 @@
-Hello friends, currently I shall be posting my blogs related to my experience as a student developer for Google Summer of Code 2025 but be sure to expect more later. Have a nice day ahead.
+Hello, I am Bipasha. I like systems, math, networks and music among many things. I forget to log stuff often so bear with me.
