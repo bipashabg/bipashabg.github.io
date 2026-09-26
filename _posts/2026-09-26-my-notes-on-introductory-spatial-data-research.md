@@ -1,4 +1,5 @@
 > #### persistent homology | tda | spatial data science
+
 As someone who still cannot operate a vehicle on a difficult path, my friends have been making me sit behind them while on a scooty. However, they always complain that I lead them to a wrong path and that I cannot understand the map well, and for the longest time I believed that I might be a bit spatially challenged lol but then I started observing how the rendering of edges as road lines are not always accurate in these navigation apps, while some people accept it as it is, it poses a real challenge and threat in conflict and disaster zones. I wanted to develop a system that validates this uncertainty claim and assign a 'confidence' scoring to these paths so that not just the navigation can be trusted more but to find a way to point out the deviation in routing in real time.
 
 I have tried to simplify the language so that it is easier for any general reader to understand what I am trying to convey.
