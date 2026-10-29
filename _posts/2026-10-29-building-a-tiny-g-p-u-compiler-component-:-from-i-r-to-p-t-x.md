@@ -50,7 +50,7 @@ A naive approach (have every thread add into one location) is slow and error-pro
 
 1. With a strided loop, thread 0 adds elements 0, 128, 256, …; thread 1 adds 1, 129, 257, … and so on. After this, 128 threads hold 128 partial sums instead of thousands of raw values.
 
-2. GPU threads come in groups of 32 called *warps*, and threads in a warp can pass values directly to each other through registers using a "shuffle" instruction. It's like a team of 32 people who can whisper numbers to each other instantly instead of writing them on a shared board. Using a butterfly pattern (combine with your neighbor 16 away, then 8, then 4, 2, 1), each warp collapses its 32 partials into one in just five steps.
+2. GPU threads come in groups of 32 called *warps*, and threads in a warp can pass values directly to each other through registers using a "shuffle" instruction. Using a kind of pattern (combine with your neighbor 16 away, then 8, then 4, 2, 1), each warp collapses its 32 partials into one in just five steps.
 
 3. A block has a small scratchpad called *shared memory* that all its threads can see. The first thread of each warp writes its warp's total there. After a synchronization barrier, the partial sums are sitting side by side.
 
