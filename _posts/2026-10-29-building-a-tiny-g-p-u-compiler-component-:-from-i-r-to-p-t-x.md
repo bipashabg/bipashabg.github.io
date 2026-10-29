@@ -7,7 +7,7 @@ From there, the IR gets lowered again, this time into PTX, NVIDIA's low-level as
 
 ## The problem:
 
-When you write `torch.randn(1024) + torch.randn(1024)` in PyTorch, something turns it into instructions a GPU can actually execute. GPUs don't understand "add two arrays" directly. They understand thousands of tiny threads, registers, memory addresses, and a low-level assembly language called **PTX**.
+When you write `torch.randn(1024) + torch.randn(1024)` in PyTorch, something turns it into instructions a GPU can actually execute. GPUs don't understand "add two arrays" directly. They understand thousands of tiny threads, registers, memory addresses, and a low-level assembly language called PTX.
 Over the past few days, I tried to built a small component of the compiler that does exactly that translation under the Emmy Hackathon 2026. It takes Emmy ML's intermediate representation (IR), a structured description of what a tensor program should compute and lowers it into PTX assembly that NVIDIA's tools can assemble and run on real hardware.
 Think of it as a translator between two very different languages. Emmy's IR speaks in terms of tensors and mathematical operations. PTX speaks in terms of threads, registers, and memory. My compiler sits in the middle and rewrites one into the other.
 
@@ -34,7 +34,7 @@ The compiler is three small pieces:
 - **A lowerer** that walks the IR statement by statement and decides what PTX to emit for each one.
 - **A PTX builder** that handles the mechanical details: allocating registers, formatting instructions, and assembling the final kernel.
 
-Every kernel I generated was checked two ways. First with `ptxas`, NVIDIA's assembler, which catches any syntax errors. Then with the hackathon's runner, which actually executes the kernel on a GPU and compares the output against a reference — down to the last decimal. A kernel only "passed" if the numbers matched.
+Every kernel I generated was checked two ways. First with `ptxas`, NVIDIA's assembler, which catches any syntax errors. Then with the hackathon's runner, which actually executes the kernel on a GPU and compares the output against a reference. A kernel only "passed" if the numbers matched.
 
 The first targets were element-wise operations: add, scale-and-shift, relu-times-multiply. These are the "easy" ones, because each output element only depends on the matching input elements. No thread ever needs to talk to any other thread.
 
